@@ -1,0 +1,629 @@
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, minimal-ui" />
+    <title>Resume Making</title>
+	<link rel = "stylesheet" href = "assets/css/style.css">
+    <link rel = "stylesheet" href = "assets/css/print.css">
+    <script src = "assets/js/resume.js"></script>
+</head>
+
+<body>
+    <div id="form_data" class="sidebar">
+        <form id="my_form" onchange="setJsonInBox(); setHtml();" action = "javascript:void(0);">
+            <h2 align="center">EDITOR</h2>
+            <input type="image" src="assets/img/printicon.png" alt="Print" onclick = "printResume();">
+            <input type="button" class="button" value="JSON" id="json" style="color : red;" onclick="setJsonInBox();showjson();">
+            <input type="button" class="button" value="HTML" id="html" style="align : center;" onclick="hidejson();">
+            <br>
+            <br>
+            <fieldset name="basics" id="fs">
+                <label for="name">Name</label>
+                <br />
+                <input type="text" name="name" id="name" value="Richard Hendriks" />
+                <br />
+                <hr />
+                <label for="label">Label</label>
+                <br />
+                <input type="text" name="label" id="label" value="Programmer" />
+                <br />
+                <hr />
+                <label for="email">Email</label>
+                <br />
+                <input type="email" name="email" id="email" value="richard.hendricks@abc.com" />
+                <br />
+                <hr />
+                <label for="phone">Phone</label>
+                <br />
+                <input type="number" name="phone" id="phone" value="9999988888" />
+                <br />
+                <hr />
+                <label for="website">Website</label>
+                <br />
+                <input type="url" name="website" id="website" value="http://abc.com" />
+                <br />
+                <hr />
+                <label for="summary">Summary</label>
+                <br />
+                <input type="text" name="summary" id="summary" value="
+Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!" />
+                <br />
+                <hr />
+				<label for="address">Address</label>
+				<br />
+				<input type="text" name = "address" id="address" value = "2712 Broadway St"/>
+				<br />
+				<hr />
+				<label for="postalcode">Postal Code</label>
+				<br />
+				<input type="text" name = "postalcode" id="postalcode" value = "CA 94115"/>
+				<br />
+				<hr />
+				<label for="city">City</label>
+				<br />
+				<input type="text" name = "city" id="city" value = "San Francisco"/>
+				<br />
+				<hr />
+				<label for="countrycode">Country Code</label>
+				<br />
+				<input type="text" name = "countrycode" id="countrycode" value = "US"/>
+				<br />
+				<hr />
+				<label for="region">Region</label>
+				<br />
+				<input type="text" name = "region" id="region" value = "California"/>
+				<br />
+				<hr />
+            </fieldset>
+            <h2 style="color : black; margin-left : 10px;">
+          <label for="profile">Profile</label>
+        </h2>
+            <div id="d1">
+                <div id="d1a">
+                    <fieldset name="profile" id="fs">
+                        <div id="d1b">
+                            <label for="network">Network</label>
+                            <br />
+                            <input type="text" name="network" id="network" value="Twitter" />
+                            <br />
+                            <hr />
+                            <label for="username">Username</label>
+                            <br />
+                            <input type="text" name="username" id="username" value="neutralthoughts" />
+                            <br />
+                            <hr />
+                        </div>
+                    </fieldset>
+                </div>
+                <br />
+            </div>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="work">Work</label>
+        </h2>
+            <fieldset name="work" id="fs">
+                <div id="d2">
+                    <label for="company">Company</label>
+                    <br />
+                    <input type="text" name="company" id="company" value="Pied Piper" />
+                    <br />
+                    <hr />
+                    <label for="position">Position</label>
+                    <br />
+                    <input type="text" name="position" id="position" value="CEO/President" />
+                    <br />
+                    <hr />
+                    <label for="website2">Website</label>
+                    <br />
+                    <input type="url" name="website2" id="website2" value="https://piedpiper.com" />
+                    <br />
+                    <hr />
+                    <label for="startdate">Start Date</label>
+                    <br />
+                    <input type="date" name="startdate" id="startdate" value="2013-12-01" />
+                    <br />
+                    <hr />
+                    <label for="enddate">End Date</label>
+                    <br />
+                    <input type="date" name="enddate" id="enddate" value="2014-12-01" />
+                    <br />
+                    <hr />
+                    <label for="summary2">Summary</label>
+                    <br />
+                    <input type="text" name="summary2" id="summary2" value="Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression." />
+                    <br />
+                    <hr />
+                    <h3 style="color : black; margin-left:10px">
+            <label for="highlights">Highlights</label>
+          </h3>
+                    <div id="d2a">
+                        <input type="text" name="highlights1" id = "highlights1" value="Build an algorithm for artist to detect if their music was violating copy right infringement laws" />
+                    </div>
+                </div>
+            </fieldset>
+            <h2 style="color : black; margin-left : 10px;">
+          <label for="volunteer">Volunteer</label>
+        </h2>
+            <fieldset name="volunteer" id="fs">
+                <div id="d3">
+                    <label for="organization">Organization</label>
+                    <br />
+                    <input type="text" name="organization" id="organization" value="CoderDojo" />
+                    <br />
+                    <hr />
+                    <label for="position2">Position</label>
+                    <br />
+                    <input type="text" name="position2" id="position2" value="Teacher" />
+                    <br />
+                    <hr />
+                    <label for="website3">Website</label>
+                    <br />
+                    <input type="text" name="website3" id="website3" value="https://coderdojo.com/" />
+                    <br />
+                    <hr />
+                    <label for="startdate2">Start Date</label>
+                    <br />
+                    <input type="date" name="startdate2" id="startdate2" value="2012-01-01" />
+                    <br />
+                    <hr />
+                    <label for="enddate2">End Date</label>
+                    <br />
+                    <input type="date" name="enddate2" id="enddate2" value="2013-01-01" />
+                    <br />
+                    <hr />
+                    <label for="summary3">Summary</label>
+                    <br />
+                    <input type="text" name="summary3" id="summary3" value="Global movement of free coding clubs for young people." />
+                    <br />
+                    <hr />
+                    <h3 style="color : black; margin-left:10px">
+            <label for="highlights">Highlights</label>
+          </h3>
+                    <div id="d3a">
+                        <input type="text" name="highlights2" id = "highlights2" value="Awarded 'Teacher of the Month'" />
+                    </div>
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="education">Education</label>
+        </h2>
+            <fieldset name="education" id="fs">
+                <div id="d4">
+                    <label for="institution">Institution</label>
+                    <br />
+                    <input type="text" name="institution" id="institution" value="University of Oklahoma" />
+                    <br />
+                    <hr />
+                    <label for="area">Area</label>
+                    <br />
+                    <input type="text" name="area" id="area" value="Information Technology" />
+                    <br />
+                    <hr />
+                    <label for="studytype">Study Type</label>
+                    <br />
+                    <input type="text" name="studytype" id="studytype" value="Bachelor" />
+                    <br />
+                    <hr />
+                    <label for="startdate3">Start Date</label>
+                    <br />
+                    <input type="date" name="startdate3" id="startdate3" value="2011-06-01" />
+                    <br />
+                    <hr />
+                    <label for="enddate3">End Date</label>
+                    <br />
+                    <input type="date" name="enddate3" id="enddate3" value="2011-06-01" />
+                    <br />
+                    <hr />
+                    <label for="gpa">Gpa</label>
+                    <br />
+                    <input type="text" name="gpa" id="gpa" value="4.0" />
+                    <br />
+                    <hr />
+                    <h3 style="color : black; margin-left:10px">
+            <label for="courses">Courses</label>
+          </h3>
+                    <div id="d4a">
+                        <input type="text" name="courses" id = "courses" value="DB1101 - Basic SQL" />
+                    </div>
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="awards">Awards</label>
+        </h2>
+            <fieldset name="awards" id="fs">
+                <div id="d5">
+                    <label for="title">Title</label>
+                    <br />
+                    <input type="text" name="title" id="title" value="Digital Compression Pioneer Award" />
+                    <br />
+                    <hr />
+                    <label for="date">Date</label>
+                    <br />
+                    <input type="date" name="date" id="date" value="2014-11-01" />
+                    <br />
+                    <hr />
+                    <label for="awarder">Awarder</label>
+                    <br />
+                    <input type="text" name="awarder" id="awarder" value="Techcrunch" />
+                    <br />
+                    <hr />
+                    <label for="summary4">Summary</label>
+                    <br />
+                    <input type="text" name="summary4" id="summary4" value="There is no spoon." />
+                    <br />
+                    <hr />
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="publications">Publications</label>
+        </h2>
+            <fieldset name="publications" id="fs">
+                <div id="d6">
+                    <label for="name2">Name</label>
+                    <br />
+                    <input type="text" name="name2" id="name2" value="Video compression for 3d media" />
+                    <br />
+                    <hr />
+                    <label for="publisher">Publisher</label>
+                    <br />
+                    <input type="text" name="publisher" id="publisher" value="Hooli" />
+                    <br />
+                    <hr />
+                    <label for="releasedate">Release Date</label>
+                    <br />
+                    <input type="date" name="releasedate" id="releasedate" value="2014-10-01" />
+                    <br />
+                    <hr />
+                    <label for="website4">Website</label>
+                    <br />
+                    <input type="url" name="website4" id="website4" value="https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)" />
+                    <br />
+                    <hr />
+                    <label for="summary5">Summary</label>
+                    <br />
+                    <input type="text" name="summary5" id="summary5" value="Innovative middle-out compression algorithm that changes the way we store data." />
+                    <br />
+                    <hr />
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="skills">Skills</label>
+        </h2>
+            <fieldset name="skills" id="fs">
+                <div id="d7">
+                    <label for="name3">Name</label>
+                    <br />
+                    <input type="text" name="name3" id="name3" value="Web Development" />
+                    <br />
+                    <hr />
+                    <label for="level">Level</label>
+                    <br />
+                    <input type="text" name="level" id="level" value="Master" />
+                    <br />
+                    <hr />
+                    <h3 style="color : black; margin-left:10px">
+            <label for="keywords">Keywords</label>
+          </h3>
+                    <div id="d7a">
+                        <input type="text" name="keywords1" id= "keywords1" value="HTML , CSS , JSON" />
+                    </div>
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="languages">Languages</label>
+        </h2>
+            <fieldset name="languages" id="fs">
+                <div id="d8">
+                    <label for="language">Language</label>
+                    <br />
+                    <input type="text" name="language" id="language" value="English" />
+                    <br />
+                    <hr />
+                    <label for="fluency">Fluency</label>
+                    <br />
+                    <input type="text" name="fluency" id="fluency" value="Native speaker" />
+                    <br />
+                    <hr />
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="interests">Interests</label>
+        </h2>
+            <fieldset name="interests" id="fs">
+                <div id="d9">
+                    <label for="name4">Name</label>
+                    <br />
+                    <input type="text" name="name4" id="name4" value="Wildlife" />
+                    <br />
+                    <hr />
+                    <h3 style="color : black; margin-left:10px">
+            <label for="keywords1">Keywords</label>
+          </h3>
+                    <div id="d9a">
+                        <input type="text" name="keywords2" id = "keywords2" value="Ferrets , Unicorns" />
+                    </div>
+                </div>
+            </fieldset>
+            <h2 style="color : black;margin-left : 10px;">
+          <label for="references">References</label>
+        </h2>
+            <fieldset name="references" id="fs">
+                <div id="d10">
+                    <label for="name5">Name</label>
+                    <br />
+                    <input type="text" name="name5" id="name5" value="Erlich Bachman" />
+                    <br />
+                    <hr />
+                    <label for="reference">Reference</label>
+                    <br />
+                    <input type="text" name="reference" id="reference" value="It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company." />
+                    <br />
+                    <hr />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="preview">
+        <textarea id="txtarea" onchange="setHtml();" onkeyup = "updateForm();">
+        </textarea>
+        <header id="header">
+            <h1 id="h1">Richard Hendriks</h1>
+            <h2 id="h2">Programmer</h2>
+        </header>
+        <div id="content" class="container">
+            <section id="contact" class="row">
+                <aside class="col-sm-3">
+                    <h3 class="headings">Contact</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <strong>Email</strong>
+                            <div class="email" id="e1">richard.hendricks@abc.com</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <strong>Phone</strong>
+                            <div class="phone">9999988888</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <strong>Website</strong>
+                            <div class="website">http://abc.com</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="about" class="row">
+                <aside class="col-sm-3">
+                    <h3 class="headings">About</h3>
+                </aside>
+                <div class="col-sm-9 , summary">
+                Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!
+                </div>
+            </section>
+            <section id="profile" class="row">
+                <aside class="col-sm-3">
+                    <h3 class="headings">Profiles</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <strong class="network">Twitter</strong>
+                            <div class="username" id="e1">neutralthoughts</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="work" class="row">
+                <aside class="col-sm-3">
+                    <h3 class="headings">Work</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+								<span class = "company">Pied Piper</span>
+								<span class="startdate" id = "sd">2013-12-01</span>
+								<span class= "enddate" id = "ed">2014-12-01</span>
+							</h4>
+                            <div class="website2 pull-right">
+                                <a href="http://piedpiper.com">http://piedpiper.com</a>
+                            </div>
+                            <div class="position">
+                                CEO/President
+                            </div>
+                            <div class="summary2">
+                                <p>Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.</p>
+                            </div>
+                            <h4>Highlights</h4>
+                            <div>
+                                <p class="highlights1">Build an algorithm for artist to detect if their music was violating copy right infringement laws.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="volunteer" class="row">
+                <aside class="col-sm-3">
+                    <h3>Volunteer</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+								<span class = "organization">CoderDojo</span>
+								<span class="startdate2" id = "sd">2013-12-01</span>
+								<span class= "enddate2" id = "ed">2014-12-01</span>
+							</h4>
+                            <div class="website3 pull-right">
+                                <a href="http://coderdojo.com/">http://coderdojo.com/</a>
+                            </div>
+                            <div class="position2">Teacher</div>
+                            <div class="summary3">
+                                <p>Global movement of free coding clubs for young people.</p>
+                            </div>
+                            <h4>Highlights</h4>
+                            <div>
+                                <p class="highlights2">Awarded 'Teacher of the Month'</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="education" class="row">
+                <aside class="col-sm-3">
+                    <h3>Education</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+								<span class = "institution">University of Oklahoma</span>
+								<span class="startdate3" id = "sd">2013-12-01</span>
+								<span class= "enddate3" id = "ed">2014-12-01</span>
+							</h4>
+                            <div class="area">
+                                Information Technology
+                            </div>
+                            <div class="studytype">
+                                Bachelor
+                            </div>
+                            <div class="gpa">
+                                4.0
+                            </div>
+                            <h4>Courses</h4>
+                            <div>
+                                <p class="courses">DB1101 - Basic SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="awards" class="row">
+                <aside class="col-sm-3">
+                    <h3>Awards</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+							<p class = "title">Digital Compression Pioneer Award</p>
+							</h4>
+                            <div class="pull-right">
+                                <em>Awarded on </em>
+                                <strong class="date">2014-11-01</strong>
+                            </div>
+                            <div>
+                                <em>by</em>
+                                <strong class="awarder">Techcrunch</strong>
+                            </div>
+                            <div class="col-sm-9 , summary4">
+                                There is no spoon.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="publications" class="row">
+                <aside class="col-sm-3">
+                    <h3>Publications</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+								<span class = "name2">Video compression for 3d media</span>
+								<span class="releasedate">
+								2014-10-01
+								</span>
+							</h4>
+                            <div class="website4 pull-right">
+                                <a href="http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)">http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)</a>
+                            </div>
+                            <div>
+                                <em>Published by</em>
+                                <strong class="publisher">Hooli</strong>
+                            </div>
+                            <div>
+                                <p class="summary5">Innovative middle-out compression algorithm that changes the way we store data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="row">
+                <aside class="col-sm-3">
+                    <h3>Skills</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="strike-through">
+							<p class = "name3">Web Development</p>
+							</h4>
+                            <div>
+                                <em>level</em>
+                                <strong class="level">Master</strong>
+                            </div>
+                            <br>
+                            <div class="keywords1">
+                                HTML , CSS , JSON
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="languages" class="row">
+                <aside class="col-sm-3">
+                    <h3>Languages</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div>
+                                <strong class="language">English</strong>
+                            </div>
+                            <div class="fluency">
+                                Native speaker
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="interests" class="row">
+                <aside class="col-sm-3">
+                    <h3>Interests</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div>
+                                <strong class= "name4">Wildlife</strong>
+                            </div>
+                            <div class="keywords2">
+                                Ferrets , Unicorns
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="references" class="row">
+                <aside class="col-sm-3">
+                    <h3>References</h3>
+                </aside>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="reference">
+                            It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company.
+							</div>
+							<div>
+                           <strong class="name5">— Erlich Bachman</strong>
+						   </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
