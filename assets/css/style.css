@@ -87,6 +87,7 @@ a {
   padding: 5px;
   margin-right: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 input[type="image"] {
     width: 30;
