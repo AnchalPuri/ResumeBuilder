@@ -28,8 +28,8 @@ div {
 .preview {
   width: 79%;
   height: 100%;
-  background-color: #fffff0;
-  border: 1px solid blue;
+  background-color: #fffafa;
+  border: 1px solid grey;
   overflow: scroll;
   float: left;
 }
@@ -87,6 +87,7 @@ a {
   padding: 5px;
   margin-right: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 input[type="image"] {
     width: 30;
